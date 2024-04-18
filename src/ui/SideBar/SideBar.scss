@@ -2,19 +2,43 @@
   @include flex-center-column;
   align-items: flex-start;
   gap: 12px;
+  display: none;
 
   padding-inline: 14px;
 
+  &--visible-on-phone {
+    @include flex-center-column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 2;
+    overflow-y: auto;
+
+    padding-block: 20px;
+
+    background-color: #fff;
+  }
+
   &__item {
     @include flex-center;
-    width: 85%;
     padding: 12px;
     background-color: #f1f1f1;
+    width: 92%;
+    
+    @include onTablet {
+      width: 85%;
+    }
 
     &--active {
       @include flex-center-column;
       gap: 6px;
       align-items: flex-start;
+
+      margin-top: 14px;
 
       border-left: 5px solid #a85555;
     }

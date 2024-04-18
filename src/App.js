@@ -10,12 +10,26 @@ const App = () => {
     third: false
   });
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="App">
-      <SideBar isVisible={isVisible} />
+      <button
+        className="icon icon--menu"
+        onClick={() => setIsMenuOpen(true)}
+      />
+
+      <SideBar
+        isVisible={isVisible}
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
 
       <div className="App__main">
-        <Chapter1 setIsVisible={setIsVisible} isVisible={isVisible} />
+        <Chapter1
+          setIsVisible={setIsVisible}
+          isVisible={isVisible}
+        />
       </div>
     </div>
   );

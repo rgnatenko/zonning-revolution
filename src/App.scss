@@ -11,19 +11,35 @@
   @include paddingBlock;
 
   &__main {
-    grid-column: 8/-1;
     @include flex-center-column;
     align-items: flex-start;
+    grid-column: span 4;
+
+    @include onTablet {
+      grid-column: 6/-1;
+    }
+
+    @include onDesktop {
+      grid-column: 8/-1;
+    }
   }
 
   &__sidebar {
     position: fixed;
-    width: 420px;
-    @include flex-center-column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    max-height: 700px;
-    overflow-y: auto;
+
+    @include onTablet {
+      @include flex-center-column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 270px;
+      max-height: 1100px;
+      overflow-y: auto;
+    }
+
+    @include onDesktop {
+      width: 420px;
+      max-height: 700px;
+    }
   }
 
   &__section {
@@ -66,10 +82,29 @@
     background-image: url('./../public/hint.svg');
     width: 12px;
     height: 12px;
-
+    
     &:hover {
       transform: scale(1.2);
       transition-duration: 0.3s;
+    }
+  }
+  
+  &--menu {
+    background-image: url('./../public/menu.svg');
+    
+    @include onTablet {
+      display: none;
+    }
+  }
+  
+  &--close {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    background-image: url('./../public/x.svg');
+
+    @include onTablet {
+      display: none;
     }
   }
 }

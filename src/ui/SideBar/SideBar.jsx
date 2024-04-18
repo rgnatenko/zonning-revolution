@@ -1,16 +1,22 @@
+import classNames from 'classnames';
 import { useEffect } from 'react';
 
-const SideBar = ({ isVisible }) => {
+const SideBar = ({ isVisible, isMenuOpen, setIsMenuOpen }) => {
 
   useEffect(() => {
-    const sidebarElement = document.querySelector('.sidebar'); // Use querySelector to get the first element with the class 'sidebar'
+    const sidebarElement = document.querySelector('.sidebar');
     if (sidebarElement) {
       sidebarElement.scrollTop = sidebarElement.scrollHeight;
     }
   }, [isVisible.first, isVisible.second, isVisible.third]);
 
   return (
-    <div className="App__sidebar sidebar">
+    <div className={classNames('App__sidebar sidebar', {
+      'sidebar--visible-on-phone': isMenuOpen
+    })}>
+
+      <button className='icon icon--close' onClick={() => setIsMenuOpen(false)}/>
+
       <div className="sidebar__item sidebar__item--active">
         <h3>Article 1</h3>
         General Provisions

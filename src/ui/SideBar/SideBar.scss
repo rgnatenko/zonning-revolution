@@ -1,0 +1,68 @@
+.sidebar {
+  @include flex-center-column;
+  align-items: flex-start;
+  gap: 12px;
+
+  padding-inline: 14px;
+
+  &__item {
+    @include flex-center;
+    width: 85%;
+    padding: 12px;
+    background-color: #f1f1f1;
+
+    &--active {
+      @include flex-center-column;
+      gap: 6px;
+      align-items: flex-start;
+
+      border-left: 5px solid #a85555;
+    }
+  }
+}
+
+.nav-item {
+  @include flex-center-column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 85%;
+
+  padding: 12px 16px;
+  border-left: 5px solid #e0e0e0;
+
+  &__top {
+    @include flex-center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  &__title {
+    font-size: 14px;
+    width: 50%;
+  }
+
+  &__number {
+    @include flex-center;
+    width: fit-content;
+    padding: 12px 16px;
+    font-size: 14px;
+
+    background-color: #e7ff7d;
+  }
+
+  &__page {
+    @include flex-center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  &__description {
+    display: block;
+    font-size: 14px;
+    color: #5f5f5f;
+
+    width: 50%;
+  }
+}

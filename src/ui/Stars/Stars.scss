@@ -1,0 +1,5 @@
+.stars {
+  width: 100%;
+  @include flex-center;
+  gap: 24px;
+}

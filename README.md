@@ -1,1 +1,1 @@
-[DEMO LINK]( https://rgnatenko.github.io/zonning-revolution/).
+[DEMO LINK]( https://rgnatenko.github.io/zonning-revolution/)
